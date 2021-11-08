@@ -1,0 +1,309 @@
+@import "zerostyle.scss";
+
+$colorBorderPc: #404040;
+$pcZoom: 2s;
+$widthPc: 500px;
+
+$timeTelMotion: 1.5s;
+$timeTelZoom: 2s;
+$colorBorderTel: rgb(145, 139, 139);
+$colorBodyTel: silver;
+$colorCamTel: black;
+
+$timeTabZoom: 2.5s;
+$timeRotateTab: 2.5s;
+$timeTabMotion: 2.5s;
+$colorBorderTab: rgb(145, 139, 139);
+$colorBodyTab: silver;
+$colorLogoTab: grey;
+
+$colorScrol: #00a8e1;
+
+
+
+::-webkit-scrollbar {
+	width: 4px;
+	
+}
+
+::-webkit-scrollbar-track {
+	opacity: 0.5;
+	background-color: grey;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $colorScrol;
+	border-radius: 2px;
+	opacity: 0, 5;
+}
+
+.wraper__all {
+	display: flex;
+	justify-content: center;
+}
+.container__all {
+	margin-top: 50px;
+}
+
+.gadgets__container {
+	margin: -200px;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+}
+
+// JS graphics and animation classes
+
+.js-add-pc-zoom {
+	transition-duration: $pcZoom;
+	transform: scale(1.2);
+}
+
+.js-add-pc-scroll {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.js-add-pc-tel-motion {
+	transition-duration: $timeTelMotion;
+	transform: translateX(-150px);
+}
+
+.js-add-tel-zoom {
+	transition-duration: $timeTelZoom;
+	transform: scale(1.5);
+}
+
+.js-add-pc-tablet-motion {
+	transition-duration: $timeTabMotion;
+	transform: translateX(260px) rotate(90deg);
+}
+
+.js-add-tablet-zoom {
+	transition-duration: $timeTabZoom;
+	transform: scale(1.4);
+}
+
+.js-add-tab-scroll {
+	display: block;
+	position: absolute;
+	z-index: 60;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.js-add-rotate-tablet {
+	transition-duration: $timeRotateTab;
+	transform: rotate(90deg) scale(1.4);
+}
+
+.js-add-rotate-tab-img-vert {
+	transform: rotate(-90deg);
+	max-width: 70%;
+	min-height: 150%;
+	margin: -45px 0px 0px 47px;
+}
+
+.js-add-rotate-tab-img-hor {
+	transform: rotate(0deg);
+}
+
+.js-add-arrow-show {
+	width: 60px;
+	height: 50px;
+	overflow: hidden;
+	z-index: 2;
+	opacity: 0.8;
+}
+
+// elements style
+.pc__container {
+	overflow: hidden;
+	transition-duration: $pcZoom;
+}
+
+.pc__displ {
+	width: $widthPc;
+	height: 290px;
+	background-color: black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	overflow: hidden;
+	overflow-x: hidden;
+}
+.pc__displ_bottom {
+	height: 6px;
+	width: 100%;
+	background-color: black;
+}
+.pc__img {
+	width: 100%;
+	padding: -2px 0px 0px 0px;
+}
+.pc__displ_frame {
+	margin: 6px 5px;
+	width: $widthPc -10px;
+	height: 285px;
+}
+.pc__body.base {
+	width: $widthPc;
+	height: 8px;
+	background-color: $colorBorderPc;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.pc__base.led {
+	position: static;
+	overflow: hidden;
+	margin: 0px 0px 0px 470px;
+	height: 3px;
+	width: 6px;
+	border-radius: 3px;
+	background-color: green;
+}
+
+.pc__body.footer {
+	margin: 0 auto;
+	background: $colorBorderPc;
+	border-radius: 0px;
+	box-shadow: inset rgba(255, 255, 255, 0.2) 8px 8px 18px 5px, inset rgba(0, 0, 0, 0.5) -8px -8px 18px 5px;
+	height: 100px;
+	width: 70px;
+}
+
+.pc__footer.platform {
+	margin: 0 auto;
+	width: 200px;
+	height: 10px;
+	border-radius: 20px;
+	background-color: $colorBorderPc;
+	box-shadow: inset rgba(255, 255, 255, 0.2) 8px 8px 18px 5px, inset rgba(0, 0, 0, 0.5) -8px -8px 18px 5px;
+}
+
+.gadgets__container {
+	z-index: 1;
+}
+
+.tel__container {
+	transition-duration: $timeTelZoom;
+	overflow: hidden;
+}
+
+.tel__body {
+	overflow-x: hidden;
+	height: 250px;
+	width: 130px;
+	border: 3px solid $colorBorderTel;
+	border-radius: 10px;
+	background-color: $colorBodyTel;
+}
+
+.tel__displ_frame {
+	width: 100%;
+	height: 232px;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.displ__img {
+	width: 100%;
+}
+
+.tel__cam {
+	height: 8px;
+	width: 50px;
+	background-color: $colorCamTel;
+	margin: 0 auto;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.tel__cam.dot {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	background-color: silver;
+	border-radius: 50%;
+	margin: 2px 0px 0px 37px;
+}
+
+.tablet__container {
+	margin: 25px 0px 0px 200px;
+	overflow: hidden;
+	transition-duration: $timeTabZoom;
+}
+
+.tablet__body {
+	width: 300px;
+	height: 200px;
+	background-color: $colorBodyTab;
+	border: 3px solid $colorBorderTab;
+	border-radius: 20px;
+	padding: 7px;
+}
+
+.tablet__displ {
+	width: 250px;
+	height: 180px;
+	overflow: hidden;
+	overflow-x: hidden;
+	border-radius: 5px;
+}
+
+.tablet__displ_frame {
+	position: relative;
+	display: flex;
+	justify-content: start;
+	align-items: flex-start;
+	max-height: 100%;
+}
+
+.tab__img {
+	width: 100%;
+}
+.tablet__logo {
+	overflow: hidden;
+	margin: -100px 0px 0px 260px;
+	width: 10;
+	height: 10;
+	border-right: 10px solid transparent;
+	border-top: 10px solid $colorLogoTab;
+	border-left: 10px solid $colorLogoTab;
+	border-bottom: 10px solid $colorLogoTab;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	transform: rotate(-90deg);
+}
+
+.js-add-tel-scroll {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.arrow-rotate-tablet {
+	display: none;
+	z-index: 2;
+	overflow: hidden;
+	opacity: 0.8;
+}
+
+.arrow {
+	position: absolute;
+	width: 50px;
+	height: 25px;
+	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+	border: 6px solid silver;
+	border-bottom: 0;
+	margin: 370px 300px 0px -161px;
+}
+
+.triangle {
+	border: 8px solid transparent;
+	width: 0px;
+	height: 0px;
+	border-top-color: silver;
+	margin: 18px 33px;
+}
